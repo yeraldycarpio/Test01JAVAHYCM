@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Categoria</title>
+    <title>Producto</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
 <div class="container mt-4">
     <div class="d-flex justify-content-between align-items-center mb-3">
-        <h1>Lista de Categorías</h1>
+        <h1>Lista de Producto</h1>
         <div>
             <a class="btn btn-primary mx-2" th:href="@{/categoria/nuevo}">Nuevo</a>
             <a class="btn btn-secondary" href="/">Inicio</a>
@@ -19,15 +19,16 @@
         <tr>
             <th scope="col">ID</th>
             <th scope="col">Nombre</th>
-            <th scope="col">Descripción</th>
+            <th scope="col">Descripcion</th>
             <th scope="col">Acciones</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="categoria : ${categorias}">
             <td th:text="${categoria.id}"></td>
-            <td th:text="${categoria.nombreenae}"></td>
-            <td th:text="${categoria.descripcionanae}"></td>
+            <td th:text="${categoria.NombreHYCM}"></td>
+            <td th:text="${categoria.DescripcionHYCM}"></td>
+
             <td>
                 <a class="btn btn-info btn-sm mt-1 mb-1" th:href="@{/categoria/editar/{id}(id=${categoria.id})}">Editar</a>
                 <a class="btn btn-danger btn-sm mt-1 mb-1" th:href="@{/categoria/eliminar/{id}(id=${categoria.id})}">Eliminar</a>
